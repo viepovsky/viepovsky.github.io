@@ -1,4 +1,6 @@
-fetch(`http://3.72.88.245/city-walk-app/localization/countries`)
+fetch("https://cors-anywhere.herokuapp.com/http://3.72.88.245/city-walk-app/localization/countries", {
+    headers: { Origin: window.location.host }
+  })
   .then(response => response.json())
   .then(data => {
     const countrySelect = document.getElementById("countrySelect");
