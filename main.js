@@ -1,4 +1,4 @@
-fetch(`https://city-walk-app--viepovsky.repl.co/city-walk-app/localization/countries`)
+fetch(`http://3.72.88.245/city-walk-app/localization/countries`)
   .then(response => response.json())
   .then(data => {
     const countrySelect = document.getElementById("countrySelect");
@@ -20,7 +20,7 @@ function loadCities() {
   if (countrySelect.value) {
     const countryCode = countrySelect.value;
 
-    fetch(`https://city-walk-app--viepovsky.repl.co/city-walk-app/localization/cities?country-code=${countryCode}`)
+    fetch(`http://3.72.88.245/city-walk-app/localization/cities?country-code=${countryCode}`)
       .then(response => response.json())
       .then(data => {
         citySelect.innerHTML = "<option value=''>Select city</option>";
@@ -48,7 +48,7 @@ function getWearRecommendation() {
   let today = new Date();
   today = today.toISOString().split('T')[0];
 
-  fetch(`https://city-walk-app--viepovsky.repl.co/city-walk-app/recommendation/wear?date=${today}&latitude=${latitude}&longitude=${longitude}`)
+  fetch(`http://3.72.88.245/city-walk-app/recommendation/wear?date=${today}&latitude=${latitude}&longitude=${longitude}`)
   .then(response => response.json())
   .then(data => {
     resultDiv.innerHTML = "<p>Weather short description: " + data.weatherDesc + "</p>" +
@@ -75,7 +75,7 @@ function getWalkRecommendation() {
     const latitude = selectedOption.getAttribute("latitude");
     const longitude = selectedOption.getAttribute("longitude");
   
-    fetch(`https://city-walk-app--viepovsky.repl.co/city-walk-app/recommendation/walk?latitude=${latitude}&longitude=${longitude}`)
+    fetch(`http://3.72.88.245/city-walk-app/recommendation/walk?latitude=${latitude}&longitude=${longitude}`)
     .then(response => response.json())
     .then(data => {
       resultDiv.innerHTML = "<p>Walk recommendation: " + data.recommendation + "</p>" +
