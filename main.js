@@ -1,4 +1,4 @@
-fetch(`https://city-walk-app--viepovsky.repl.co/city-walk-app/localization/countries`)
+fetch(`https://3.72.88.245/city-walk-app/localization/countries`)
   .then(response => response.json())
   .then(data => {
     const countrySelect = document.getElementById("countrySelect");
